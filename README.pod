@@ -1,0 +1,34 @@
+
+=head1 Error::Tiny
+
+    use Error::Tiny;
+
+    try {
+        dangerous();
+    }
+    catch MyCustomException with {
+        my $e = shift;
+
+        ...everything whose parent is MyCustomException...
+    }
+    catch {
+        my $e = shift;
+
+        ...everything else goes here...
+    };
+
+=head2 Why not Try::Tiny
+
+    try {
+        dangerous();
+    }
+    catch {
+        my $e = $_;
+
+        if (blessed($e) && $e->isa('MyCustomException')) {
+        }
+        else {
+        }
+    };
+
+=cut
