@@ -15,7 +15,7 @@ license: unknown
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
-name: Error-Tiny
+name: error-tiny
 no_index:
   directory:
     - t
@@ -28,20 +28,20 @@ no_index:
 provides:
   Error::Tiny:
     file: lib/Error/Tiny.pm
-    version: 0.01
+    version: 0.02
   Error::Tiny::Catch:
     file: lib/Error/Tiny/Catch.pm
   Error::Tiny::Exception:
     file: lib/Error/Tiny/Exception.pm
-  Error::Tiny::With:
-    file: lib/Error/Tiny/With.pm
+  Error::Tiny::Then:
+    file: lib/Error/Tiny/Then.pm
 requires:
   Carp: 0
   Scalar::Util: 0
 resources:
   bugtracker: https://github.com/vti/error-tiny/issues
   homepage: https://github.com/vti/error-tiny
-  repository: git://github.com/vti/error-tiny.git
-version: 0.01
+  repository: git://github.com/vti/error-tiny
+version: 0.02
 x_contributors:
   - 'vti <viacheslav.t@gmail.com>'

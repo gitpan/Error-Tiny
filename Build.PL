@@ -23,7 +23,7 @@ my %args = (
         'Module::Build' => 0.38,
     },
 
-    name            => 'Error-Tiny',
+    name            => 'error-tiny',
     module_name     => 'Error::Tiny',
     allow_pure_perl => 0,
 

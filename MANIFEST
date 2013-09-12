@@ -5,7 +5,7 @@ cpanfile
 lib/Error/Tiny.pm
 lib/Error/Tiny/Catch.pm
 lib/Error/Tiny/Exception.pm
-lib/Error/Tiny/With.pm
+lib/Error/Tiny/Then.pm
 t/basic.t
 t/lib/CustomException.pm
 Build.PL
