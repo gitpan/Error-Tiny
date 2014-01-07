@@ -5,7 +5,7 @@ use warnings;
 
 use vars qw(@ISA @EXPORT @EXPORT_OK);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 BEGIN {
     require Exporter;
@@ -43,7 +43,7 @@ sub try(&;@) {
         }
 
         for my $handler (@handlers) {
-            if ($handler->isa('Error::Tiny::Catch')) {
+            if ($handler && $handler->isa('Error::Tiny::Catch')) {
                 if ($e->isa($handler->class)) {
                     return $handler->handler->($e);
                 }
@@ -112,6 +112,19 @@ L<Error::Tiny::Exception> is a lightweight base exception class. It is easy to
 throw an exception:
 
     Error::Tiny::Exception->throw('error');
+
+=head1 WARNING
+
+If you start getting strange behaviour when working with exceptions, make sure
+that you C<use> L<Error::Tiny> in the correct package in the correct place.
+Somehow perl doesn't report this as an error.
+
+This will not work:
+
+    use Error::Tiny;
+    package MyPackage;
+
+    try { ... };
 
 =head1 DEVELOPMENT
 
